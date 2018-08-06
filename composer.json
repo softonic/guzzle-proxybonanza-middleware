@@ -10,7 +10,8 @@
   },
   "require": {
     "php": ">=7.1",
-    "softonic/graphql-client": "^1.1"
+    "guzzlehttp/guzzle": "^6.3",
+    "psr/cache": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.0",
@@ -21,12 +22,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Softonic\\ProxyBonanza\\Guzzle\\Middleware": "src/"
+      "Softonic\\ProxyBonanza\\Guzzle\\Middleware\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Softonic\\ProxyBonanza\\Guzzle\\Middleware": "tests/"
+      "Softonic\\ProxyBonanza\\Guzzle\\Middleware\\": "tests/"
     }
   },
   "scripts": {

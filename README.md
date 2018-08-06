@@ -1,4 +1,4 @@
-Guzzle Proxybonanza Middleware
+Guzzle Proxy Bonanza Middleware
 =====
 
 [![Latest Version](https://img.shields.io/github/release/softonic/guzzle-proxybonanza-middleware.svg?style=flat-square)](https://github.com/softonic/guzzle-proxybonanza-middleware/releases)
@@ -20,7 +20,27 @@ composer require softonic/guzzle-proxybonanza-middleware
 Usage
 -------
 
+To use this middleware, you need to initialize it like:
 
+```php
+$proxyManager = new ProxyManager(
+    new Proxy(
+        new GuzzleClient(),
+        $cache, // A PSR-6 item pool cache.
+        '<YOUR-USER-PACKAGE-ID>',
+        '<YOUR-API-KEY>'
+));
+```
+
+And inject it to Guzzle with somethine like:
+```php
+$stack = new HandlerStack();
+$stack->setHandler(new CurlHandler());
+$stack->push($proxyManager);
+$guzzleClient = new GuzzleClient(['handler' => $stack]);
+```
+
+From now on every request sent with `$guzzleClient` will be done using a random proxy from your proxy list.
 
 
 Testing
