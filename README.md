@@ -1,3 +1,8 @@
+DEPRECATED
+=====
+Deprecated in favor of [softonic/guzzle-proxy-middleware](https://github.com/softonic/guzzle-proxy-middleware). The new package allows any proxy instead of just proxybonanza.
+
+
 Guzzle Proxy Bonanza Middleware
 =====
 
